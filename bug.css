@@ -1,0 +1,26 @@
+The following CSS code snippet is intended to style a button, but it contains a subtle error that may lead to unexpected behavior in certain circumstances:
+
+```css
+.my-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.my-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+```
+
+The problem is that the `box-shadow` property in the `:hover` state is slightly different from the initial state. If the developer intends to only change the blur radius of the box shadow on hover, this change will have an unexpected effect on the offset values, which will cause some minor movements to the button when hovering.
+
+This is a subtle bug because it doesn't immediately cause a visual error. However, it can create an inconsistent user experience, where the button appears to 'jump' slightly on hover.
