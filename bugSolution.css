@@ -1,0 +1,24 @@
+The solution involves maintaining consistent offset values in the `box-shadow` property for both the default and hover states of the button.  Here's the corrected CSS:
+
+```css
+.my-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.my-button:hover {
+  box-shadow: 0 8px 24px 0 rgba(0,0,0,0.24); /* Only change blur radius */
+}
+```
+
+By only modifying the blur radius (`16px` to `24px`) while keeping the offset values (`0 8px`) the same, we ensure a smooth hover effect without any unexpected jumps.
